@@ -9,7 +9,7 @@ import { Toaster, toast } from "react-hot-toast";
 
 export default function Home() {
   const [isPrompt, setPrompt] = useState("");
-  const [isResult, setResult] = useState("La programación es el arte de dar vida a las ideas, donde los errores son oportunidades de aprendizaje y cada línea de código es un paso hacia el éxito.");
+  const [isResult, setResult] = useState("");
   const [loading, setLoading] = useState(false);
 
   const onSubmit = async (e) => {
@@ -38,8 +38,8 @@ export default function Home() {
       <section className=" bg-zinc-950 dark:bg-slate-100">
         <Presentacion />
       </section>
-      <section className=" bg-zinc-950 dark:bg-slate-100 h-screen">
-        <div className="flex flex-col items-center pt-5 py-5">
+      <section className=" bg-zinc-950 dark:bg-slate-100 h-auto">
+        <div className="flex flex-col items-center pt-5 py-5 bg-zinc-950 h-screen dark:bg-slate-100">
           <form
             className="flex gap-3 w-full md:px-56 lg:px-80 px-5"
             onSubmit={onSubmit}
@@ -87,8 +87,8 @@ export default function Home() {
                       </button>
                     </CopyToClipboard>
                   </div>
-                  <div className="h-auto ">
-                    <h1 className="text-white text-lg text-pretty ">
+                  <div className="h-auto">
+                    <h1 className="text-white text-lg text-pretty h-auto">
                       <TypeAnimation
                         splitter={(str) => str.split(/(?= )/)}
                         sequence={[isResult]}
